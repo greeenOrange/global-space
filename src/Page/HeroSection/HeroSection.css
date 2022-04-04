@@ -1,0 +1,45 @@
+main{
+    
+}
+.hero-section{
+    border: 1px solid red;
+    background-color: #1E1B3A;
+    /* position: relative; */
+}
+.welcome-section{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.left-hero{
+    height: 100vh;
+}
+.left-hero h1{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.right-hero{
+    
+}
+.main-globe{
+    background-size: cover cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    
+}
+.main-globe img{
+    z-index: 111;
+    background-color: #1E1B3A;
+    
+}
+.space-man{
+    position: absolute;
+    border: 1px solid red;
+    
+}
+.space-man{
+    
+}
