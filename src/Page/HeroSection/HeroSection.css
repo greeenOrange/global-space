@@ -27,9 +27,10 @@ main{
     background-size: cover cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: -60px;
-    right: -150px;
-    
+    top: -50px;
+    right: -120px;
+    width: 600px;
+    height: 600px;
 }
 .space-man{
     
@@ -41,4 +42,28 @@ main{
     position: absolute;
     top: 100px;
     right: 150px;
+
+}
+
+.earth-globe{
+
+}
+.earth-globe img{
+    background-size: cover cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 260px;
+    right: 100px;
+    width: 150px;
+}
+.circule-globe{
+
+}
+.circule-globe img{
+    background-size: cover cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 520px;
+    right: 100px;
+    width: 80px;
 }

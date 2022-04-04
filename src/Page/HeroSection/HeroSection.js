@@ -27,6 +27,12 @@ const HeroSection = () => {
                                 <div className="space-man">
                                     <img src="https://i.ibb.co/rt9pr6n/space-man.png" alt="" width="500" height="500" />
                                 </div>
+                                <div className="earth-globe">
+                                    <img src="https://i.ibb.co/qYHSXjK/globe.png" alt="" />
+                                </div>
+                                <div className="circule-globe">
+                                    <img src="https://i.ibb.co/M5pttct/21.png" alt="" />
+                                </div>
                             </div>
                         </div>
                     </div>
