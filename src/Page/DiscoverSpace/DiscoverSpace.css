@@ -1,0 +1,33 @@
+.discover-univercel{
+    background: #18163B;
+    color: #fff;
+    padding: 2.5rem 0;
+}
+.discover-univercel h3{
+    margin: .7rem 0;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: 'Russo One', sans-serif;
+}
+.misson-space{
+    background-color: #231E44;
+    padding: 2rem;
+    transition: all ease-out .2s;
+}
+.misson-space h4{
+    font-family: 'Russo One', sans-serif;
+    font-size: 20px;
+    line-height: 36.15px;
+}
+.misson-space p{
+    font-family: 'Inter', sans-serif;
+}
+.misson-space:hover{
+    background: linear-gradient(95.48deg, #2317FA -1.25%, #D529E4 97.48%);
+    box-shadow: 6px 16px 31px 8px rgba(59, 88, 239, 0.15);
+    cursor: pointer;
+}
+.misson-space img{
+    width: 124px;
+    height: 124px;
+}

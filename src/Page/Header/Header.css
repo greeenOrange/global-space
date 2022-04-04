@@ -6,9 +6,6 @@
 .container{
     width: 1100px;
     max-width: 1200px;
-    background: url(https://i.ibb.co/zfb2RKN/body.png);
-    background-size: cover cover;
-    background-color: #1E1B3A;
 }
 .navbar{
     background-color: #1E1B3A;
