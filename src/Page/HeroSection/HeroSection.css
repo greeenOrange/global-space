@@ -9,21 +9,61 @@ main{
 .welcome-section{
     display: flex;
     align-items: center;
-    margin-left: -12px;
-    background-color: #1A1733;
+    width: 250px;
+    height: 65px;
+    background-color: #09090952;
     border-radius: .3rem;
     padding: .5rem;
 }
+.welcome-section img{
+    width: 50px;
+    height: 40px;
+}
+.welcome-details{
+    margin: 1rem 0;
+}
 .welcome-section h5{
     margin-left: .5rem;
+    color: #8C21ED;
+    background-image: linear-gradient(90deg, #6B1EF1 10%, #CB28E5 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin: auto;
 }
 .left-hero{
     height: 100vh;
+    text-align: start;
+    margin: auto;
+    margin-left: -12px;
 }
-.left-hero h1{
-    font-size: 30px;
+.welcome-details h1{
+    font-size: 60px;
     font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Russo One', sans-serif;
 }
+.welcome-details h1 span{
+    display: block;
+}
+.welcome-details p{
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    margin: 1rem 0;
+}
+.welcome-details button{
+    margin-top: .8rem;
+    background: linear-gradient(95.48deg, #2317FA -1.25%, #D529E4 97.48%);
+    box-shadow: 6px 16px 31px 8px rgba(59, 88, 239, 0.15);
+    border-radius: 0px;
+    padding: .9rem 2.4rem;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
 .left-rectangel{
 
 }
@@ -31,10 +71,10 @@ main{
     background-size: cover cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: 105px;
-    left: 0px;
-    width:70px;
-    height: 70px;
+    top: 100px;
+    left: -20px;
+    width:90px;
+    height: 90px;
 }
 
 .right-hero{

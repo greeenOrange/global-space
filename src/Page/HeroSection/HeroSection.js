@@ -13,8 +13,8 @@ const HeroSection = () => {
                             <img src="https://i.ibb.co/6Hsq34r/r8-2.png" alt="" />
                             <h5>Welcome to Stella</h5>
                         </div>
-                        <div>
-                        <h1>Space For Everyone</h1>
+                        <div className='welcome-details'>
+                        <h1>Space For <span>Everyone</span></h1>
                         <p>At Piap space, we belive that we can make Space and Earth cleaner, engineering, and delivering top-quality robotics solutions</p>
                         <button>Get start</button>
                         <div className="left-rectangel">
