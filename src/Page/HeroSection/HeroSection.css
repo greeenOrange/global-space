@@ -2,7 +2,6 @@ main{
     
 }
 .hero-section{
-    border: 1px solid red;
     background-color: #1E1B3A;
     /* position: relative; */
 }
@@ -20,26 +19,26 @@ main{
 }
 
 .right-hero{
-    
 }
 .main-globe{
+    position: relative;  
+}
+.main-globe img{
     background-size: cover cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: 0px;
-    right: 0px;
-    
-}
-.main-globe img{
-    z-index: 111;
-    background-color: #1E1B3A;
+    top: -60px;
+    right: -150px;
     
 }
 .space-man{
+    
+    
+}
+.space-man img{
+    background-size: cover cover;
+    background-repeat: no-repeat;
     position: absolute;
-    border: 1px solid red;
-    
-}
-.space-man{
-    
+    top: 100px;
+    right: 150px;
 }

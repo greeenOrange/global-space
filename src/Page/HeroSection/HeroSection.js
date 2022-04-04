@@ -8,7 +8,7 @@ const HeroSection = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
-                        <div className="left-hero">
+                        <div className="left-hero mt-5">
                         <div className="welcome-section">
                             <img src="https://i.ibb.co/6Hsq34r/r8-2.png" alt="" />
                             <h5>Welcome to Stella</h5>
@@ -25,7 +25,7 @@ const HeroSection = () => {
                                     <img src="https://i.ibb.co/WkzW9ym/r8-1.png" alt="" />
                                 </div>
                                 <div className="space-man">
-                                    <img src="https://i.ibb.co/rt9pr6n/space-man.png" alt="" />
+                                    <img src="https://i.ibb.co/rt9pr6n/space-man.png" alt="" width="500" height="500" />
                                 </div>
                             </div>
                         </div>
