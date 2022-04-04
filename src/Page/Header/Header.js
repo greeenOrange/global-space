@@ -2,7 +2,6 @@ import React from 'react';
 import './Header.css'
 const Header = () => {
     return (
-        <div className=''>
   <div class="content">
             <nav class="navbar navbar-expand-lg navbar-light container">
     <a class="navbar-brand" href="#">
@@ -31,7 +30,7 @@ const Header = () => {
     </div>
 </nav>
   </div>
-        </div>
+
     );
 };
 

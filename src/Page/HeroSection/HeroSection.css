@@ -1,3 +1,4 @@
+
 main{
     
 }
@@ -8,7 +9,13 @@ main{
 .welcome-section{
     display: flex;
     align-items: center;
-    justify-content:center;
+    margin-left: -12px;
+    background-color: #1A1733;
+    border-radius: .3rem;
+    padding: .5rem;
+}
+.welcome-section h5{
+    margin-left: .5rem;
 }
 .left-hero{
     height: 100vh;
@@ -16,6 +23,18 @@ main{
 .left-hero h1{
     font-size: 30px;
     font-weight: 600;
+}
+.left-rectangel{
+
+}
+.left-rectangel img{
+    background-size: cover cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 105px;
+    left: 0px;
+    width:70px;
+    height: 70px;
 }
 
 .right-hero{
@@ -29,8 +48,8 @@ main{
     position: absolute;
     top: -50px;
     right: -120px;
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
 }
 .space-man{
     
@@ -40,9 +59,8 @@ main{
     background-size: cover cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: 100px;
-    right: 150px;
-
+    top: 90px;
+    right: 120px;
 }
 
 .earth-globe{
@@ -54,7 +72,7 @@ main{
     position: absolute;
     top: 260px;
     right: 100px;
-    width: 150px;
+    width: 120px;
 }
 .circule-globe{
 
@@ -63,7 +81,7 @@ main{
     background-size: cover cover;
     background-repeat: no-repeat;
     position: absolute;
-    top: 520px;
+    bottom: 70px;
     right: 100px;
-    width: 80px;
+    width: 70px;
 }
