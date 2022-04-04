@@ -39,9 +39,10 @@ main{
     margin-left: -12px;
 }
 .welcome-details h1{
-    font-size: 60px;
-    font-weight: 600;
+    font-size: 55px;
+    font-weight: 400;
     color: #fff;
+    letter-spacing:3px;
     text-transform: uppercase;
     font-family: 'Russo One', sans-serif;
 }
@@ -56,12 +57,16 @@ main{
 .welcome-details button{
     margin-top: .8rem;
     background: linear-gradient(95.48deg, #2317FA -1.25%, #D529E4 97.48%);
-    box-shadow: 6px 16px 31px 8px rgba(59, 88, 239, 0.15);
     border-radius: 0px;
     padding: .9rem 2.4rem;
+    border: none;
     font-family: 'Inter', sans-serif;
     color: #fff;
     text-transform: uppercase;
+    transition: all ease-out .2s;
+}
+.welcome-details button:hover{
+    box-shadow: 6px 16px 31px 8px rgba(59, 88, 239, 0.15);
 }
 
 .left-rectangel{
@@ -75,6 +80,17 @@ main{
     left: -20px;
     width:90px;
     height: 90px;
+}
+
+.left-circle img{
+    position: absolute;
+width: 280px;
+height: 280px;
+left: -100px;
+bottom: 50px;
+/* background: #30285B;
+opacity: 0.9;
+filter: blur(100px); */
 }
 
 .right-hero{
@@ -101,6 +117,19 @@ main{
     position: absolute;
     top: 90px;
     right: 120px;
+}
+
+.space-man-light{
+
+}
+.space-man-light img{
+    background-size: cover cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 458.08px;
+    height: 368.05px;
+    bottom: 20px;
+    right: 230px;
 }
 
 .earth-globe{

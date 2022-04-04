@@ -1,6 +1,7 @@
 .content{
     background-color: #1E1B3A;
     font-family: 'Inter', sans-serif;
+    
 }
 .container{
     width: 1100px;
@@ -33,4 +34,9 @@
    border-image-slice: 1;
    color: #fff;
    background-color: #1E1B3A;
+   transition: all ease-out .2s;
+}
+.collapse button:hover{
+    border-image: linear-gradient(45deg, #6B1EF1 35%, #CB28E5 100%);
+    border-image-slice: 1;
 }

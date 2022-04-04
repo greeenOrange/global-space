@@ -20,6 +20,9 @@ const HeroSection = () => {
                         <div className="left-rectangel">
                             <img src="https://i.ibb.co/y8kN2Q8/3-1.png" alt="" />
                         </div>
+                        <div className="left-circle">
+                            <img src="https://i.ibb.co/6vVmjT9/Ellipse-1.png" alt="" />
+                        </div>
                         </div>
                         </div>
                         </div>
@@ -31,6 +34,9 @@ const HeroSection = () => {
                                 </div>
                                 <div className="space-man">
                                     <img src="https://i.ibb.co/rt9pr6n/space-man.png" alt="" width="500" height="500" />
+                                </div>
+                                <div className="space-man-light">
+                                    <img src="https://i.ibb.co/ZJ7cfz6/Vector-98.png" alt="" />
                                 </div>
                                 <div className="earth-globe">
                                     <img src="https://i.ibb.co/qYHSXjK/globe.png" alt="" />
