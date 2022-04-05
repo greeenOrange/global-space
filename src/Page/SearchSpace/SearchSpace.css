@@ -1,0 +1,38 @@
+.search-space{
+    background: #1E1B3A;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+.row{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+}
+.search-bar p{
+    margin-top: .9rem;
+}
+.search-bar li{
+    list-style: none;
+}
+.launch-year{
+    display: flex;
+    align-items: center;
+}
+.launch-year p{
+    margin-top: .9rem;
+}
+.launch-year li{
+    list-style: none;
+}
+.search-input{
+}
