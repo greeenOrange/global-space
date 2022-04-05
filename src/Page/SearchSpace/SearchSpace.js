@@ -12,7 +12,7 @@ const SearchSpace = () => {
                     <p>Is upcoming?</p>
                     <li class=" dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            yes/no
+            yes
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">yes</a></li>

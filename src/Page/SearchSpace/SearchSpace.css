@@ -28,6 +28,14 @@
     display: flex;
     align-items: center;
 }
+.search-bar::after{
+    content: '';
+    border-right: 2px solid #DADADA;
+    opacity: 0.4;
+    display: block;
+    height: 30px;
+    margin-left: .7rem;
+}
 .search-bar p{
     margin-top: .9rem;
 }
@@ -37,6 +45,7 @@
 .launch-year{
     display: flex;
     align-items: center;
+    margin-left: 1.5rem;
 }
 .launch-year p{
     margin-top: .9rem;
