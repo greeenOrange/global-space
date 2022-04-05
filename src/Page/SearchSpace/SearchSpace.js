@@ -12,11 +12,11 @@ const SearchSpace = () => {
                     <p>Is upcoming?</p>
                     <li class=" dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Is upcoming?
+            yes/no
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">yes</a></li>
-            <li><a class="dropdown-item" href="#">no</a></li>
+            <li><a class="dropdown-item" href="#">false</a></li>
           </ul>
         </li>
                 </div>
@@ -40,6 +40,79 @@ const SearchSpace = () => {
       </form>
                 </div>
                 </div>
+                <div className="col-md-3">
+                  <div className="rocket-details">
+                    <img src="https://i.ibb.co/6gTY45P/s1.png" alt="" />
+                    <h3>Falcon Two</h3>
+                    <p>Rocket name: FalconSat</p>
+                    <p>Launch year: 2006</p>
+                    <p>Upcoming: false</p>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="rocket-details">
+                    <img src="https://i.ibb.co/3WZTFT0/p1.png" alt="" />
+                    <h3>Falcon Two</h3>
+                    <p>Rocket name: FalconSat</p>
+                    <p>Launch year: 2006</p>
+                    <p>Upcoming: false</p>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="rocket-details">
+                    <img src="https://i.ibb.co/6gTY45P/s1.png" alt="" />
+                    <h3>Falcon Two</h3>
+                    <p>Rocket name: FalconSat</p>
+                    <p>Launch year: 2006</p>
+                    <p>Upcoming: false</p>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="rocket-details">
+                    <img src="https://i.ibb.co/93F6yF3/p2.png" alt="" />
+                    <h3>Falcon Two</h3>
+                    <p>Rocket name: FalconSat</p>
+                    <p>Launch year: 2006</p>
+                    <p>Upcoming: false</p>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="rocket-details">
+                    <img src="https://i.ibb.co/6gTY45P/s1.png" alt="" />
+                    <h3>Falcon Two</h3>
+                    <p>Rocket name: FalconSat</p>
+                    <p>Launch year: 2006</p>
+                    <p>Upcoming: false</p>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="rocket-details">
+                    <img src="https://i.ibb.co/3WZTFT0/p1.png" alt="" />
+                    <h3>Falcon Two</h3>
+                    <p>Rocket name: FalconSat</p>
+                    <p>Launch year: 2006</p>
+                    <p>Upcoming: false</p>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="rocket-details">
+                    <img src="https://i.ibb.co/6gTY45P/s1.png" alt="" />
+                    <h3>Falcon Two</h3>
+                    <p>Rocket name: FalconSat</p>
+                    <p>Launch year: 2006</p>
+                    <p>Upcoming: false</p>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="rocket-details">
+                    <img src="https://i.ibb.co/93F6yF3/p2.png" alt="" />
+                    <h3>Falcon Two</h3>
+                    <p>Rocket name: FalconSat</p>
+                    <p>Launch year: 2006</p>
+                    <p>Upcoming: false</p>
+                  </div>
+                </div>
+
                 </div>
             </div>
         </div>

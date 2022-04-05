@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './Page/Home/Home';
-import Header from './Page/Header/Header';
+import Header from './Shared/Header/Header';
 
 function App() {
   return (
