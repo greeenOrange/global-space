@@ -6,7 +6,8 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './Page/Home/Home';
-import Header from './Shared/Header/Header';
+import Header from './Page/Header/Header';
+import Rockets from './Page/Rockets/Rockets';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <BrowserRouter>
       <Header></Header>
     <Routes>
-        <Route index element={<Home />} />
+        <Route index path="/" element={<Home />} />
+        <Route index path="/rockets" element={<Rockets />} />
     </Routes>
   </BrowserRouter>
     </div>
