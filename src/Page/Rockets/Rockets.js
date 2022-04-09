@@ -1,27 +1,43 @@
-import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import ReactPaginate from 'react-paginate';
 import './Rockets.css'
 
-const Rockets = (props) => {
-    const [rockets, setRockets] = useState([]);
-    const data = [...rockets]
-    const sliceData = data.slice(0,10);
-    const [pageCount, setPageCount] = useState(0);
-    // const [value, setValue] = useState("");
-    const [searchTitle, setSearchTitle] = useState("");
+const Rockets = () => {
+  const [offset, setOffset] = useState(0);
+  const [data, setData] = useState([]);
+  const [perPage] = useState(10);
+  const [pageCount, setPageCount] = useState(0)
 
-    useEffect(()=>{
-        fetch('https://api.spacexdata.com/v3/launches')
-        .then(res=>res.json())
-        .then(data => {
-            setRockets(data)
 
-        });
-    },[])
-    const handleSearch = (e) =>{
-      setSearchTitle(e.target.value)
-      e.preventDefault()
-    }
-    
+    const getData = async() => {
+      const res = await axios.get(`https://api.spacexdata.com/v3/launches`)
+      const data = res.data;
+                const slice = data.slice(offset, offset + perPage)
+                const postData = slice.map(pd => <div key={pd.id}  className="col-md-3">
+                  <div className="rocket-details">
+                    {/* <img src="https://i.ibb.co/6gTY45P/s1.png" alt="" /> */}
+                    <img src={pd.links.mission_patch_small} alt="" />
+                    <h3>{pd.mission_name}</h3>
+                    <p>Rocket name: {pd.rocket.rocket_name}</p>
+                    <p>Launch year: {pd.launch_year}</p>
+                    <p>Upcoming: {pd.upcoming.toString()}</p>
+                  </div>
+                </div>)
+                setData(postData)
+                setPageCount(Math.ceil(data.length / perPage))
+  }
+
+  const handlePageClick = (e) => {
+    const selectedPage = e.selected;
+    setOffset(selectedPage + 1)
+};
+
+ useEffect(() => {
+   getData()
+ }, [offset])
+ 
+
     return (
         <div className='search-space'>
             <div className="container">
@@ -59,33 +75,25 @@ const Rockets = (props) => {
         // style={{ width: "30%", height: "25px" }}
         type="text"
         placeholder="Search for rocket"
-        onChange={handleSearch}
       />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
                 </div>
                 </div>
-                {sliceData?.filter((value) => {
-            if (searchTitle === "") {
-              return value;
-            } else if (
-              value.rocket.rocket_name.toString().toLowerCase().includes(searchTitle.toLowerCase())
-            ) {
-              return value;
-            }
-          }).map((pd, index)  =>(
-                    
-                    <div key={pd.flight_number} className="col-md-3">
-                  <div className="rocket-details">
-                    {/* <img src="https://i.ibb.co/6gTY45P/s1.png" alt="" /> */}
-                    <img src={pd.links.mission_patch_small} alt="" />
-                    <h3>{pd.mission_name}</h3>
-                    <p>Rocket name: {pd.rocket.rocket_name}</p>
-                    <p>Launch year: {pd.launch_year}</p>
-                    <p>Upcoming: {pd.upcoming.toString()}</p>
-                  </div>
-                </div>
-                ))}
+                {data}
+                <ReactPaginate
+                    nextLabel="next >"
+                    previousLabel="< previous"
+                    breakLabel={"..."}
+                    breakClassName={"break-me"}
+                    pageCount={pageCount}
+                    marginPagesDisplayed={1}
+                    pageRangeDisplayed={2}
+                    onPageChange={handlePageClick}
+                    containerClassName={"pagination justify-content-center"}
+                    subContainerClassName={"pages pagination"}
+                    activeClassName={"active"}
+                  />
                 </div>
             </div>
         </div>

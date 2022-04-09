@@ -1,10 +1,10 @@
-.search-space a{
+/* .search-space a{
     color: #fff;
 }
 .search-space p{
     color: #ABABAB;
 
-}
+} */
 .search-space{
     background: #1E1B3A;
     color: #fff;
@@ -78,3 +78,20 @@
     height: 100px;
     margin: .7rem 0;
 }
+.pagination{
+    margin: 1rem;
+}
+.pagination .previous{
+    display: none;
+}
+.pagination .next{
+    display: none;
+}
+.pagination > .active > a{
+    color: #f19b9b;
+  }
+  .pagination > li > a{
+    padding: .5rem;
+    outline: none;
+    cursor: pointer;
+  }
