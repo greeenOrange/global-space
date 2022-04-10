@@ -4,9 +4,10 @@ import './Rockets.css'
 
  const Rockets = () => {
   const [rockets, setRockets] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCompleted, setFilterCompleted] = useState("");
-  console.log(filterCompleted);
+  const [filterYear, setFilterYear] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
@@ -17,6 +18,7 @@ import './Rockets.css'
       .get(`https://api.spacexdata.com/v3/launches`)
       .then((response) => {
         setRockets(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -44,14 +46,20 @@ import './Rockets.css'
     if (filterCompleted === "true") {
       displayData = displayData.filter(
           value =>
-          filterCompleted === "true" && value.completed === true
+          filterCompleted === "true" && value.upcoming === true
       )
   }
 
   if (filterCompleted === "false") {
     displayData = displayData.filter(
         value =>
-        filterCompleted === "false" && value.completed === false
+        filterCompleted === "false" && value.upcoming === false
+    )
+  }
+  if (filterYear === "2006") {
+    displayData = displayData.filter(
+        value =>
+        filterYear === "false" && value.launch_year === false
     )
   }
 
@@ -84,7 +92,6 @@ import './Rockets.css'
                          aria-label="Default select example"
                          value={filterCompleted}
                           onChange={(e) => {
-                            console.log(e.target.value)
                           setFilterCompleted(e.target.value);
                           setCurrentPage(1);
                             }}
@@ -96,12 +103,19 @@ import './Rockets.css'
                      </div>
                      <div className="launch-year">
                       <p>Launch Year?</p>
-                      <select class="form-select w-50" aria-label="Default select example">
+                      <select class="form-select w-50"
+                       aria-label="Default select example"
+                       value={filterYear}
+                          onChange={(e) => {
+                          setFilterYear(e.target.value);
+                          setCurrentPage(1);
+                            }}
+                       >
                         <option selected>select one</option>
-                        <option value="1">yes</option>
-                        <option value="2">No</option>
-                        <option value="3">No</option>
-                        <option value="4">No</option>
+                        <option value="2000-2005">2000-2005</option>
+                        <option value="2006">2006-2010</option>
+                        <option value="2011-2015">2011-2015</option>
+                        <option value="2015-2020">2015-2020</option>
                       </select>
                      </div>
                      </div>
@@ -111,14 +125,14 @@ import './Rockets.css'
                       type="text"
                       className="form-control"
                       id="search"
-                      placeholder="Search Title"
+                      placeholder="Search for rocket"
                       value={searchTerm}
                       onChange={(e) => {
                         setSearchTerm(e.target.value);
                         setCurrentPage(1);
                       }}
                     />
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-dark p-2" type="submit">Search</button>
           </form>
                     </div>
                     </div>
@@ -133,7 +147,11 @@ import './Rockets.css'
       </div>
 
   
-
+      {
+        isLoading && <div class="spinner-border text-center text-primary" style={{margin:'10px auto'}} role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+            }
       {rocketsData
         .map((value, index) => {
           return (
