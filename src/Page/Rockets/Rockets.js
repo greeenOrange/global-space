@@ -105,6 +105,7 @@ import './Rockets.css'
                       <p>Launch Year?</p>
                       <select
                        aria-label="Default select example"
+                       className="w-50"
                        value={filterYear}
                           onChange={(e) => {
                           setFilterYear(e.target.value);

@@ -56,10 +56,6 @@ select.active{
     align-items: center;
     margin-left: 1.5rem;
 }
-.launch-year select{
-    width: 135px;
-    max-width: auto;
-}
 .launch-year p{
     margin-top: .9rem;
 }
