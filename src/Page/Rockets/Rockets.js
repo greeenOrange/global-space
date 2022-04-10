@@ -39,7 +39,7 @@ import './Rockets.css'
     if (searchTerm) {
         displayData = displayData.filter(
             value =>
-            value.rocket.rocket_name.toLowerCase().includes(searchTerm.toLowerCase())
+            value.mission_name.toLowerCase().includes(searchTerm.toLowerCase())
         );
     }
 
@@ -59,7 +59,7 @@ import './Rockets.css'
   if (filterYear === "2006") {
     displayData = displayData.filter(
         value =>
-        filterYear === "false" && value.launch_year === false
+        filterYear === "2006" && value.launch_year === "2006"
     )
   }
 
@@ -88,7 +88,7 @@ import './Rockets.css'
                      <div className='d-flex align-items-center justify-content-center'>
                      <div className='search-bar'>
                          <p>Is upcoming?</p>
-                         <select class=""
+                         <select className=""
                          aria-label="Default select example"
                          value={filterCompleted}
                           onChange={(e) => {
@@ -96,14 +96,14 @@ import './Rockets.css'
                           setCurrentPage(1);
                             }}
                             >
-                        <option selected>select one</option>
+                        <option value={'select one'}>select one</option>
                         <option value="true">yes</option>
                         <option value="false">No</option>
                       </select>
                      </div>
                      <div className="launch-year">
                       <p>Launch Year?</p>
-                      <select class=""
+                      <select className=""
                        aria-label="Default select example"
                        value={filterYear}
                           onChange={(e) => {
@@ -111,7 +111,7 @@ import './Rockets.css'
                           setCurrentPage(1);
                             }}
                        >
-                        <option selected>select year</option>
+                        <option value={'select year'}>select year</option>
                         <option value="2000-2005">2000-2005</option>
                         <option value="2006">2006-2010</option>
                         <option value="2011-2015">2011-2015</option>
@@ -120,10 +120,9 @@ import './Rockets.css'
                      </div>
                      </div>
                      <div className="search-input">
-                     <form class="d-flex" >
+                     <form className="d-flex" >
                      <input
                       type="text"
-                      className="form-control"
                       id="search"
                       placeholder="Search for rocket"
                       value={searchTerm}
@@ -132,11 +131,14 @@ import './Rockets.css'
                         setCurrentPage(1);
                       }}
                     />
-            <button class="btn btn-outline-dark p-2" type="submit">Search</button>
+            <button type="submit">Search</button>
           </form>
                     </div>
                     </div>
-      <div className="mb-3">
+                    
+        {/* restart Filter */}
+
+      {/* <div className="mb-3">
         <button
           type="button"
           className="btn btn-danger btn-sm"
@@ -144,22 +146,22 @@ import './Rockets.css'
         >
           Reset Filters
         </button>
-      </div>
+      </div> */}
 
   
       {
-        isLoading && <div class="spinner-border text-center text-primary" style={{margin:'10px auto'}} role="status">
-                      <span class="visually-hidden">Loading...</span>
+        isLoading && <div className="spinner-border text-center text-primary" style={{margin:'10px auto'}} role="status">
+                      <span className="visually-hidden">Loading...</span>
                     </div>
             }
       {rocketsData
         .map((value, index) => {
           return (
-            <div key={value.id}  className="col-md-3">
+            <div key={value.flight_number}  className="col-md-3">
                   <div className="rocket-details">
                     <img src={value.links.mission_patch_small} alt="" />
                     <h3>{value.mission_name}</h3>
-                    <p>Rocket name: {value.rocket.rocket_name}</p>
+                    <p>Rocket name: {value.mission_name}</p>
                     <p>Launch year: {value.launch_year}</p>
                     <p>Upcoming: {value.upcoming.toString()}</p>
                   </div>

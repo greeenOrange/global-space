@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="row">
             <h1>Newsletter</h1>
 
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
         <input type="text" placeholder="Email address" aria-label="Email address" aria-describedby="basic-addon2" />
         <button>Subscribe</button>
             </div>
@@ -21,9 +21,9 @@ const Footer = () => {
                 </div>
                 <div className="social-media">
                 <ul className='social-section'>
-                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href=""><i className="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i className="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i className="fa-brands fa-linkedin"></i></a></li>
                 </ul>
                 </div>
                 </div>

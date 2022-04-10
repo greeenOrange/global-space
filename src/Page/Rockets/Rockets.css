@@ -63,9 +63,28 @@ select.active{
 .launch-year li{
     list-style: none;
 }
-.search-input{
-
+.search-input input{
+    background-color:transparent;
+    border: 1px solid #DADADA;
+    padding: .5rem 0;
+    outline: 0;
 }
+.search-input button{
+    padding: .5rem 1rem;
+    border: 1px solid #6F6C83;
+    background-color: #0E0D22;
+    color: #fff;
+    transition: all ease-in .2s;
+}
+.search-input button:hover{
+    border: 1px solid #0E0D22;
+    background-color: #fff;
+    color: #000;
+}
+.search-input input::placeholder {
+    padding: .4rem .8rem;
+    color: #DADADA;
+  }
 .rocket-details{
     background-color: #1D0C41;
     padding: 1rem;
