@@ -1,25 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
-  console.log({paginate});
-  const pageNumbers = [];
+const Pagination = ({postData}) => {
+  // const {rocket}= pd;
+  console.log({postData});
+  const [searchTitle, setSearchTitle] = useState("");
 
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const handleSearch = event => {
+    const searchText = event.target.value;
 
+    const matchedProducts = postData.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()));
+
+    // setDisplayProducts(matchedProducts);
+}
   return (
-    <nav>
-      <ul className='pagination'>
-        {pageNumbers.map(number => (
-          <li key={number} className='page-item'>
-            <a onClick={() => paginate(number)} href='!#' className='page-link'>
-              {number}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div>
+      {postData?.filter((value) => value).map((pd, index)  =>(
+                    
+                    <div key={pd.flight_number}>
+
+                </div>
+                ))}
+    
+    <div className="search-input">
+                <form class="d-flex" >
+                <input
+        // style={{ width: "30%", height: "25px" }}
+        type="text"
+        placeholder="Search for rocket"
+        onChange={handleSearch}
+      />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+                </div>
+                </div>
   );
 };
 

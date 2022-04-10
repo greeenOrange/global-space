@@ -1,103 +1,168 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import ReactPaginate from 'react-paginate';
+import { useState, useEffect, useMemo } from "react";
+import axios from "axios";
 import './Rockets.css'
 
-const Rockets = () => {
-  const [offset, setOffset] = useState(0);
-  const [data, setData] = useState([]);
-  const [perPage] = useState(10);
-  const [pageCount, setPageCount] = useState(0)
+ const Rockets = () => {
+  const [rockets, setRockets] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterCompleted, setFilterCompleted] = useState("");
+  console.log(filterCompleted);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageCount, setPageCount] = useState(0);
+  const perPage = 10;
 
-    const getData = async() => {
-      const res = await axios.get(`https://api.spacexdata.com/v3/launches`)
-      const data = res.data;
-                const slice = data.slice(offset, offset + perPage)
-                const postData = slice.map(pd => <div key={pd.id}  className="col-md-3">
-                  <div className="rocket-details">
-                    {/* <img src="https://i.ibb.co/6gTY45P/s1.png" alt="" /> */}
-                    <img src={pd.links.mission_patch_small} alt="" />
-                    <h3>{pd.mission_name}</h3>
-                    <p>Rocket name: {pd.rocket.rocket_name}</p>
-                    <p>Launch year: {pd.launch_year}</p>
-                    <p>Upcoming: {pd.upcoming.toString()}</p>
-                  </div>
-                </div>)
-                setData(postData)
-                setPageCount(Math.ceil(data.length / perPage))
+  useEffect(() => {
+    axios
+      .get(`https://api.spacexdata.com/v3/launches`)
+      .then((response) => {
+        setRockets(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(pageCount / perPage); i++) {
+    pageNumbers.push(i);
   }
 
-  const handlePageClick = (e) => {
-    const selectedPage = e.selected;
-    setOffset(selectedPage + 1)
-};
 
- useEffect(() => {
-   getData()
- }, [offset])
- 
+  const rocketsData = useMemo(() => {
+    let displayData = rockets;
 
-    return (
-        <div className='search-space'>
-            <div className="container">
-                <div className="row">
-                <div className='search-container'>
-                <div className='d-flex align-items-center justify-content-center'>
-                <div className='search-bar'>
-                    <p>Is upcoming?</p>
-                    <li class=" dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            yes
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">yes</a></li>
-            <li><a class="dropdown-item" href="#">false</a></li>
-          </ul>
-        </li>
-                </div>
-                <div className="launch-year">
-                 <p>Launch Year?</p>
-                 <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Launch year?
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">2001-2005</a></li>
-            <li><a class="dropdown-item" href="#">2006-2010</a></li>
-          </ul>
-        </li>
-                </div>
-                </div>
-                <div className="search-input">
-                <form class="d-flex" >
-                <input
-        // style={{ width: "30%", height: "25px" }}
-        type="text"
-        placeholder="Search for rocket"
-      />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-                </div>
-                </div>
-                {data}
-                <ReactPaginate
-                    nextLabel="next >"
-                    previousLabel="< previous"
-                    breakLabel={"..."}
-                    breakClassName={"break-me"}
-                    pageCount={pageCount}
-                    marginPagesDisplayed={1}
-                    pageRangeDisplayed={2}
-                    onPageChange={handlePageClick}
-                    containerClassName={"pagination justify-content-center"}
-                    subContainerClassName={"pages pagination"}
-                    activeClassName={"active"}
-                  />
-                </div>
-            </div>
-        </div>
+    if (searchTerm) {
+        displayData = displayData.filter(
+            value =>
+            value.rocket.rocket_name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    }
+
+    if (filterCompleted === "true") {
+      displayData = displayData.filter(
+          value =>
+          filterCompleted === "true" && value.completed === true
+      )
+  }
+
+  if (filterCompleted === "false") {
+    displayData = displayData.filter(
+        value =>
+        filterCompleted === "false" && value.completed === false
+    )
+  }
+
+    setPageCount(displayData.length);
+
+    //Current Page slice
+    return displayData.slice(
+        (currentPage - 1) * perPage,
+        (currentPage - 1) * perPage + perPage
     );
-};
+}, [rockets, currentPage, searchTerm, filterCompleted]);
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const resetFilter = () => {
+    setSearchTerm("");
+    setFilterCompleted("");
+    setCurrentPage(1);
+  };
+
+  return (
+    <div className="search-space">
+    <div className="container">
+    <div className="row">
+    <div className='search-container'>
+                     <div className='d-flex align-items-center justify-content-center'>
+                     <div className='search-bar'>
+                         <p>Is upcoming?</p>
+                         <select class="form-select w-50"
+                         aria-label="Default select example"
+                         value={filterCompleted}
+                          onChange={(e) => {
+                            console.log(e.target.value)
+                          setFilterCompleted(e.target.value);
+                          setCurrentPage(1);
+                            }}
+                            >
+                        <option selected>select one</option>
+                        <option value="true">yes</option>
+                        <option value="false">No</option>
+                      </select>
+                     </div>
+                     <div className="launch-year">
+                      <p>Launch Year?</p>
+                      <select class="form-select w-50" aria-label="Default select example">
+                        <option selected>select one</option>
+                        <option value="1">yes</option>
+                        <option value="2">No</option>
+                        <option value="3">No</option>
+                        <option value="4">No</option>
+                      </select>
+                     </div>
+                     </div>
+                     <div className="search-input">
+                     <form class="d-flex" >
+                     <input
+                      type="text"
+                      className="form-control"
+                      id="search"
+                      placeholder="Search Title"
+                      value={searchTerm}
+                      onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                        setCurrentPage(1);
+                      }}
+                    />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+                    </div>
+                    </div>
+      <div className="mb-3">
+        <button
+          type="button"
+          className="btn btn-danger btn-sm"
+          onClick={resetFilter}
+        >
+          Reset Filters
+        </button>
+      </div>
+
+  
+
+      {rocketsData
+        .map((value, index) => {
+          return (
+            <div key={value.id}  className="col-md-3">
+                  <div className="rocket-details">
+                    <img src={value.links.mission_patch_small} alt="" />
+                    <h3>{value.mission_name}</h3>
+                    <p>Rocket name: {value.rocket.rocket_name}</p>
+                    <p>Launch year: {value.launch_year}</p>
+                    <p>Upcoming: {value.upcoming.toString()}</p>
+                  </div>
+                </div>
+          );
+        })}
+
+        <nav>
+        <ul className="pagination d-flex align-item-center justify-content-center">
+          {pageNumbers.map((number) => (
+            <li key={number} className="page-item">
+              <button onClick={() => paginate(number)} className="page-link">
+                {number}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+    </div>
+    </div>
+  );
+}
 export default Rockets;
