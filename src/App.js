@@ -8,6 +8,9 @@ import {
 import Home from './Page/Home/Home';
 import Header from './Page/Header/Header';
 import Rockets from './Page/Rockets/Rockets';
+import Aboutus from './Page/AboutUs/Aboutus';
+import Story from './Page/Story/Story';
+import Blog from './Page/Blog/Blog';
 
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
       <Header></Header>
     <Routes>
         <Route index path="/rockets" element={<Rockets />} />
+        <Route index path="/aboutus" element={<Aboutus />} />
+        <Route index path="/story" element={<Story />} />
+        <Route index path="/blog" element={<Blog />} />
         <Route index path="/" element={<Home />} />
     </Routes>
   </BrowserRouter>

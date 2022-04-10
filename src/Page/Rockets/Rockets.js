@@ -85,10 +85,10 @@ import './Rockets.css'
     <div className="container">
     <div className="row">
     <div className='search-container'>
-                     <div className='d-flex align-items-center justify-content-center'>
-                     <div className='search-bar'>
+                     <div className='d-flex align-items-center justify-flex-start'>
+                     <div className='search-bar w-50'>
                          <p>Is upcoming?</p>
-                         <select className=""
+                         <select
                          aria-label="Default select example"
                          value={filterCompleted}
                           onChange={(e) => {
@@ -101,10 +101,11 @@ import './Rockets.css'
                         <option value="false">No</option>
                       </select>
                      </div>
-                     <div className="launch-year">
+                     <div className="launch-year w-50">
                       <p>Launch Year?</p>
-                      <select className=""
+                      <select
                        aria-label="Default select example"
+                       className="w-50"
                        value={filterYear}
                           onChange={(e) => {
                           setFilterYear(e.target.value);
@@ -112,10 +113,14 @@ import './Rockets.css'
                             }}
                        >
                         <option value={'select year'}>select year</option>
-                        <option value="2000-2005">2000-2005</option>
-                        <option value="2006">2006-2010</option>
-                        <option value="2011-2015">2011-2015</option>
-                        <option value="2015-2020">2015-2020</option>
+                        <option value="2000-2005">less than 1990</option>
+                        <option value="2006">1991 - 1995</option>
+                        <option value="2011-2015">1996 - 2000</option>
+                        <option value="2015-2020">2001 - 2005</option>
+                        <option value="2015-2020">2006 - 2010</option>
+                        <option value="2015-2020">2011 - 2015</option>
+                        <option value="2015-2020">2016 - 2020</option>
+                        <option value="2015-2020">greater than 2020</option>
                       </select>
                      </div>
                      </div>

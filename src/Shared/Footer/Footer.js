@@ -21,9 +21,9 @@ const Footer = () => {
                 </div>
                 <div className="social-media">
                 <ul className='social-section'>
-                    <li><a href=""><i className="fa-brands fa-twitter"></i></a></li>
-                    <li><a href=""><i className="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href=""><i className="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://twitter.com/?lang=en"><i className="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/"><i className="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.linkedin.com/"><i className="fa-brands fa-linkedin"></i></a></li>
                 </ul>
                 </div>
                 </div>

@@ -28,11 +28,6 @@ select.active{
     background-color: #2D2853;
     border-radius: .3rem;
 }
-.row{
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-}
 .search-bar{
     display: flex;
     align-items: center;
@@ -44,6 +39,10 @@ select.active{
     display: block;
     height: 30px;
     margin-left: .7rem;
+}
+.search-bar select{
+    width: 110px;
+    max-width: auto;
 }
 .search-bar p{
     margin-top: .9rem;
@@ -64,7 +63,7 @@ select.active{
     list-style: none;
 }
 .search-input input{
-    background-color:transparent;
+    background-color: transparent;
     border: 1px solid #DADADA;
     padding: .5rem 0;
     outline: 0;
