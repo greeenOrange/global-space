@@ -11,7 +11,7 @@ import './Rockets.css'
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
-  const perPage = 10;
+  const perPage = 8;
 
   useEffect(() => {
     axios
@@ -88,7 +88,7 @@ import './Rockets.css'
                      <div className='d-flex align-items-center justify-content-center'>
                      <div className='search-bar'>
                          <p>Is upcoming?</p>
-                         <select class="form-select w-50"
+                         <select class=""
                          aria-label="Default select example"
                          value={filterCompleted}
                           onChange={(e) => {
@@ -103,7 +103,7 @@ import './Rockets.css'
                      </div>
                      <div className="launch-year">
                       <p>Launch Year?</p>
-                      <select class="form-select w-50"
+                      <select class=""
                        aria-label="Default select example"
                        value={filterYear}
                           onChange={(e) => {
@@ -111,7 +111,7 @@ import './Rockets.css'
                           setCurrentPage(1);
                             }}
                        >
-                        <option selected>select one</option>
+                        <option selected>select year</option>
                         <option value="2000-2005">2000-2005</option>
                         <option value="2006">2006-2010</option>
                         <option value="2011-2015">2011-2015</option>
@@ -168,11 +168,12 @@ import './Rockets.css'
         })}
 
         <nav>
-        <ul className="pagination d-flex align-item-center justify-content-center">
+        <ul className="d-flex align-item-center justify-content-center">
           {pageNumbers.map((number) => (
-            <li key={number} className="page-item">
-              <button onClick={() => paginate(number)} className="page-link">
+            <li key={number}>
+              <button className="active" onClick={() => paginate(number)}>
                 {number}
+                
               </button>
             </li>
           ))}

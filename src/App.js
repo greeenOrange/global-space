@@ -8,7 +8,7 @@ import {
 import Home from './Page/Home/Home';
 import Header from './Page/Header/Header';
 import Rockets from './Page/Rockets/Rockets';
-import Pagination from './Page/Pagination/Pagination';
+
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
       <Header></Header>
     <Routes>
         <Route index path="/rockets" element={<Rockets />} />
-        <Route index path="/pagination" element={<Pagination />} />
         <Route index path="/" element={<Home />} />
     </Routes>
   </BrowserRouter>

@@ -1,10 +1,19 @@
-/* .search-space a{
+.search-space a{
     color: #fff;
 }
 .search-space p{
     color: #ABABAB;
 
-} */
+}
+select{
+    background-color:transparent;
+    border:none;
+    margin-left: .7rem;
+    outline: none;
+}
+select.active{
+    color: #fff;
+}
 .search-space{
     background: #1E1B3A;
     color: #fff;
@@ -42,6 +51,7 @@
 .search-bar li{
     list-style: none;
 }
+
 .launch-year{
     display: flex;
     align-items: center;
@@ -78,18 +88,22 @@
     height: 100px;
     margin: .7rem 0;
 }
-.pagination{
+ul{
     margin: 1rem;
 }
-.pagination .previous{
-    display: none;
+.search-space ul li{ 
+    list-style: none;
 }
-.pagination .next{
-    display: none;
+.search-space ul li button{
+    background-color:transparent;
+    border: none;
+    color: #3f377a;
+    padding: .5rem .9rem;
 }
-.pagination > .active > a{
-    color: #f19b9b;
-  }
+.search-space ul li button:focus{
+        color: #fff;
+}
+
   .pagination > li > a{
     padding: .5rem;
     outline: none;
