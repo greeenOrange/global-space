@@ -1,6 +1,6 @@
 # Space launches websites
 
-Global space website (https://github.com/facebook/create-react-app).
+Global space website (https://famous-frangollo-a053be.netlify.app/).
 
 ## Global space website
 
@@ -19,6 +19,7 @@ Global space website (https://github.com/facebook/create-react-app).
 * Bootstrap
 * NPM Packages
 * Font fontawesome cdn
-* Google Font
-* netlify.
+* Google Font.
 
+### `Deploy`
+* Netlify

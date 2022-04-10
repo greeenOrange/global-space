@@ -101,11 +101,10 @@ import './Rockets.css'
                         <option value="false">No</option>
                       </select>
                      </div>
-                     <div className="launch-year w-50">
+                     <div className="launch-year">
                       <p>Launch Year?</p>
                       <select
                        aria-label="Default select example"
-                       className="w-50"
                        value={filterYear}
                           onChange={(e) => {
                           setFilterYear(e.target.value);
