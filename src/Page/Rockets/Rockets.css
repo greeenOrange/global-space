@@ -21,9 +21,6 @@ select.active{
 }
 .search-container{
     margin: 3.5rem .5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: .5rem 1rem;
     background-color: #2D2853;
     border-radius: .3rem;

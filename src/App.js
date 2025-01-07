@@ -6,11 +6,12 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './Page/Home/Home';
-import Header from './Page/Header/Header';
+
 import Rockets from './Page/Rockets/Rockets';
 import Aboutus from './Page/AboutUs/Aboutus';
 import Story from './Page/Story/Story';
 import Blog from './Page/Blog/Blog';
+import Header from './Shared/Header/Header';
 
 
 function App() {
