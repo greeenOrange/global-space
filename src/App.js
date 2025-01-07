@@ -12,6 +12,7 @@ import Aboutus from './Page/AboutUs/Aboutus';
 import Story from './Page/Story/Story';
 import Blog from './Page/Blog/Blog';
 import Header from './Shared/Header/Header';
+import Footer from './Shared/Footer/Footer';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route index path="/blog" element={<Blog />} />
         <Route index path="/" element={<Home />} />
     </Routes>
+    <Footer />
   </BrowserRouter>
     </div>
   );
