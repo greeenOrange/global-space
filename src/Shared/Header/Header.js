@@ -5,7 +5,7 @@ const Header = () => {
     return (
   <div className="content">
             <nav className="navbar navbar-expand-lg navbar-light container">
-    <NavLink className="navbar-brand" href="/" >
+    <NavLink to="/" className="navbar-brand" >
     <img src='https://i.ibb.co/StCT8fH/logo.png' alt="logo" width="100" height="50" />
     </NavLink>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
